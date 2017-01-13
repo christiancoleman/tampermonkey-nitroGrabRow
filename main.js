@@ -75,6 +75,7 @@ function formatPretty(wager){
         .replace('Pending ', 'Pending')
         .replace('win ', 'Win')
         .replace('lose ', 'Lose')
+        .replace('Game: ', '')
         .replace('Match: ', '');
 }
 
@@ -119,8 +120,7 @@ function formatPerSpreadsheetVar(wagerInfo){
         }else {
             newWagerString += 'ERROR'; // populate a column with error if section was unrecognized
         }
-
-        if(i < usersFormat.length - 1 && currentPlace !== 'blank'){
+        if(i < usersFormat.length - 1 && currentPlace !== 'blank'){ // adds comma unless it is a blank col (because we've already added one)
             newWagerString += ',';
         }
     }
